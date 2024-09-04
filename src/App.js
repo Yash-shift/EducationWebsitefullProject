@@ -5,17 +5,21 @@ import Home from "./pages/Home";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
 import Dashboard from "./pages/Dashboard";
+import { useState } from "react";
 
 function App() {
+
+  const[isLoggedIn,setIsLoggedIn] =useState(false);
+
   return (
     <div className="">
-      <Navbar />
+      <Navbar  isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn}/>
       <Routes>
         <Route>
           <Route  path="/" element={<Home />} />
-          <Route  path="/about" element={<Login />} />
-          <Route  path="/contact" element={<Signup />} />
-          <Route  path="/dashboard" element={<Dashboard />} />
+          <Route  path="/login" element={<Login setIsLoggedIn={setIsLoggedIn}/>} />
+          <Route  path="/signup" element={<Signup setIsLoggedIn={setIsLoggedIn} />} />
+          <Route  path="/dashboard" element={<Dashboard  />} />
         </Route>
       </Routes>
     </div>
