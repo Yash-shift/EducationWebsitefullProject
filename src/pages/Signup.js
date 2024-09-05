@@ -5,7 +5,7 @@ import Templates from '../components/Templates'
 const Signup = ({setIsLoggedIn}) => {
   return (
     <Templates
-    title="JOIN the million learning to code with our weebsite"
+    title="JOIN the Million Learning!"
     desc1="Build skills for today,tommorow and beyond"
     desc2="Education is future "
     image={signupImg}
